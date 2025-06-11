@@ -1,6 +1,117 @@
+:root {
+    --orange: hsl(31, 77%, 52%);
+    --dark-cyan: hsl(184, 100%, 22%);
+    --very-dark-cyan: hsl(179, 100%, 13%);
+    --transparent-white: hsla(0, 0%, 100%, 0.75);
+    --very-light-gray: hsl(0, 0%, 95%);
+}
+
 *,
 html {
     box-sizing: border-box;
+}
+
+body {
+    font-size: 15px;
+    max-width: 600px;
+    margin: 10rem auto;
+
+}
+
+button {
+    all: unset;
+    background-color: var(--very-light-gray);
+    padding: 0.5rem;
+    display: flex;
+    justify-content: center;
+    border-radius: 1rem;
+    font-size: smaller;
+    font-family: 'Lexenda Deca', sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+#card-1 {
+    background-color: var(--orange);
+}
+
+#card-1>button {
+    color: var(--orange);
+}
+
+
+#card-2 {
+    background-color: var(--dark-cyan);
+}
+
+#card-2>button {
+    color: var(--dark-cyan);
+}
+
+#card-3 {
+    background-color: var(--very-dark-cyan);
+}
+
+#card-3>button {
+    color: var(--very-dark-cyan);
+}
+
+h1 {
+    color: var(--very-light-gray);
+    font-family: 'Big Shoulders', sans-serif;
+    font-weight: 300;
+    margin-bottom: 0;
+}
+
+p {
+    color: var(--transparent-white);
+    font-size: smaller;
+    margin-bottom: 1.5rem;
+}
+
+.card {
+    padding: 1.3rem;
+    flex: 1 1 200px;
+    /* grow, shrink, basis */
+    max-width: 300px;
+    /* Increase max-width if you want to keep it */
+
+}
+
+.card:nth-of-type(1) {
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+}
+
+.card:nth-of-type(3) {
+    border-top-right-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+}
+
+
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+
+
+.lexend-deca-regular {
+    font-family: "Lexend Deca", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+.big-shoulders-bold {
+    font-family: "Big Shoulders", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
 }
 
 .attribution {
@@ -10,4 +121,25 @@ html {
 
 .attribution a {
     color: hsl(228, 45%, 44%);
+}
+
+@media (max-width: 630px) {
+    .card {
+        flex: 1 1 100%;
+        /* 70% width on small screens */
+        max-width: 70%;
+        gap: 0;
+    }
+
+    .card:nth-of-type(1) {
+        border-top-left-radius: 0.5rem;
+        border-top-right-radius: 0.5rem;
+        border-bottom-left-radius: 0rem;
+    }
+
+    .card:nth-of-type(3) {
+        border-top-right-radius: 0rem;
+        border-bottom-left-radius: 0.5rem;
+    }
+
 }
